@@ -9,3 +9,10 @@ if letra in resposta:
 	print('Você acertou a Letra')
 else:
 	print('Voce errou a Letra')
+	#Criada estrutura de repetição
+	entrada = input('Digite p para pausar o Programa!!')
+	while entrada != 'p':
+		print('voce entrou no loop')
+
+
+
