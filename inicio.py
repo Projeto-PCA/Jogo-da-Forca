@@ -5,14 +5,58 @@ errou = 0
 letras_certas = ''
 letras_erradas = ''
 
+forca = """	
+_______
+	   |
+	   |
+	   |
+	   -
+"""
+cabeca = """
+	O
+"""
+tronco = """
+	O
+	|
+"""
+braco_esquerdo = """
+	O
+   /|
+"""
+
+braco_direito = """
+	O
+   /|\\
+"""
+perna_esquerda = """	
+	O
+   /|\\
+   / 
+"""
+perna_direita = """	
+	O
+   /|\\
+   / \\
+"""
+
+membros_perdidos =[
+ nenhum,
+ cabeça,
+ tronco,
+ braço_esquerdo,
+ braço_direito,
+ perna_esquerda,
+ perna_direita
+ ]
 
 
 #Estrutura de repetição para continuar o progama.
 while acertou != len(resposta) and errou != 5:
+	#Parte do progama responsavel pela saida da Palavra Secreta
 	mensagem = ''
 	for letra in resposta:
 		if letra in letras_certas:
-			mensagem += letra + ' '
+			mensagem += f'{letra}'
 		else:
 			mensagem += '_ '
 	print(mensagem)
