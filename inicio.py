@@ -4,15 +4,15 @@ from random import choice
 #Arquivo para puxar as palavras secretas para as respostas.
 with open('palavras.txt') as arquivo:
 	linhas = arquivo.read()
-	lista_de_palavras = linhas.split('\n')
+	lista_de_respostas = linhas.split('\n')
 #Adicionado    .upper() para remover bug na entrada do usuario.
-resposta = choice(lista_de_palavras).upper()
+resposta = choice(lista_de_respostas).upper()
 acertou = 0
 errou = 0
 letras_certas = ''
 letras_erradas = ''
 
-
+#Saidas padronizadas de chances do boneco.
 nada = ''
 forca = """	
 ____
@@ -46,8 +46,8 @@ perna_direita = """
    /|\\
    / \\
 """
-
 chances_do_boneco = [nada, cabeca, tronco, braco_esquerdo, braco_direito, perna_esquerda, perna_direita]
+
 #Estrutura de repetição para continuar o progama.
 while acertou != len(resposta) and errou != 7:
 	#Parte do progama responsavel pela saida da Palavra Secreta
@@ -67,11 +67,13 @@ while acertou != len(resposta) and errou != 7:
 	
 
 # Condicional de uma Letra na Resposta
-
+	if letra in letras_certas+letras_erradas:
+		print('Você ja tentou esta letra antes!!')
+		continue
 	if letra in resposta:
-		print('Voce acertou a Letra: '+ letra)
-		letras_certas += letra
-		acertou += 1
+			print('Voce acertou a Letra: '+ letra)
+			letras_certas += letra
+			acertou += resposta.count(letra)
 	else:
 		print('Voce errou a Letra: ' + letra)
 		letras_erradas += letra
