@@ -1,5 +1,12 @@
+#Metodo para escolher entre listas.
+from random import choice
+
+#Arquivo para puxar as palavras secretas para as respostas.
+with open('palavras.txt') as arquivo:
+	linhas = arquivo.read()
+	lista_de_palavras = linhas.split('\n')
 #Adicionado    .upper() para remover bug na entrada do usuario.
-resposta = 'chave'.upper()
+resposta = choice(lista_de_palavras).upper()
 acertou = 0
 errou = 0
 letras_certas = ''
