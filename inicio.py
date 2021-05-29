@@ -5,53 +5,44 @@ errou = 0
 letras_certas = ''
 letras_erradas = ''
 
+
+nada = ''
 forca = """	
-_______
-	   |
-	   |
-	   |
-	   -
-"""
+____
+    |
+    |
+    |
+    -"""
 cabeca = """
-	O
+    O
 """
 tronco = """
-	O
-	|
+    O
+    |
 """
 braco_esquerdo = """
-	O
-   /|
+    O
+    |
 """
 
 braco_direito = """
-	O
+    O
    /|\\
 """
-perna_esquerda = """	
-	O
+perna_esquerda = """
+    O
    /|\\
    / 
 """
-perna_direita = """	
-	O
+perna_direita = """
+    O
    /|\\
    / \\
 """
 
-membros_perdidos =[
- nenhum,
- cabeça,
- tronco,
- braço_esquerdo,
- braço_direito,
- perna_esquerda,
- perna_direita
- ]
-
-
+chances_do_boneco = [nada, cabeca, tronco, braco_esquerdo, braco_direito, perna_esquerda, perna_direita]
 #Estrutura de repetição para continuar o progama.
-while acertou != len(resposta) and errou != 5:
+while acertou != len(resposta) and errou != 7:
 	#Parte do progama responsavel pela saida da Palavra Secreta
 	mensagem = ''
 	for letra in resposta:
@@ -59,11 +50,14 @@ while acertou != len(resposta) and errou != 5:
 			mensagem += f'{letra}'
 		else:
 			mensagem += '_ '
+
+	print(forca + chances_do_boneco[errou])
 	print(mensagem)
 	# Entrada Do Usuário.
 
 	letra = input('Insira a letra da Palavra Oculta : ').upper()
-	print('Voce ja errou essas letras : ' + letras_erradas)
+	# saida
+	
 
 # Condicional de uma Letra na Resposta
 
