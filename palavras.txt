@@ -1,5 +1,9 @@
-Celulares
-cigarros
-Plasticos
-Papel
-vidro
+Latas:metal
+cigarros:papel
+garrafa pet:plastico
+documentos:papel
+cerveja:vidro
+bateria:não reciclaveis
+frutas:organico
+carnes:organico
+pilhas:não reciclaveis
